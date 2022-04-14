@@ -67,11 +67,11 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb",
   col_dmenu_bg, "-nf", col_dmenu_fg, "-sb", sel_dmenu_bg, "-sf", sel_dmenu_fg, NULL };
-static const char *termcmd[]  = { "kitty", NULL };
-static const char *term2cmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
+static const char *term2cmd[]  = { "kitty", NULL };
+static const char *statcmd[]  = { "kitty", "-c", "$XDG_CONFIG_HOME/kitty/kitty-r.conf" };
 static const char *browsercmd[]  = { "brave", NULL };
 static const char *gamecmd[]  = { "steam", NULL };
-static const char *statcmd[]  = { "alacritty", "-t", "stat", "-e", "radian", "-q" };
 static const char *brcmd[]  = { "br-keys", NULL };
 static const char *offcmd[]  = { "shutdown", "now" };
 
@@ -83,7 +83,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = term2cmd } },
 	{ MODKEY,                       XK_b,      spawn,          {.v = browsercmd } },
 	{ MODKEY,                       XK_g,      spawn,          {.v = gamecmd } },
-	{ MODKEY,                       XK_r,      spawn,          {.v = statcmd } },
+	{ MODKEY|ControlMask,           XK_Return, spawn,          {.v = statcmd } },
 	{ MODKEY,                       XK_c,      spawn,          {.v = brcmd } },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
