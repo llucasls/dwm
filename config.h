@@ -69,7 +69,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
   col_dmenu_bg, "-nf", col_dmenu_fg, "-sb", sel_dmenu_bg, "-sf", sel_dmenu_fg, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *term2cmd[]  = { "kitty", NULL };
-static const char *statcmd[]  = { "kitty", "-c", "$XDG_CONFIG_HOME/kitty/kitty-r.conf" };
+static const char *statcmd[]  = { "alacritty", "--config-file", "/home/lucas/.config/alacritty/stat.yml" };
 static const char *browsercmd[]  = { "brave", NULL };
 static const char *gamecmd[]  = { "steam", NULL };
 static const char *brcmd[]  = { "br-keys", NULL };
