@@ -91,6 +91,7 @@ static const char *gamecmd[]  = { "steam", NULL };
 static const char *statcmd[]  = { "alacritty", "-t", "stat", "-e", "radian", "-q" };
 static const char *brcmd[]  = { "br-keys", NULL };
 static const char *offcmd[]  = { "shutdown", "now" };
+static const char *emacscmd[] = { "launch-emacs", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -102,6 +103,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_g,      spawn,          {.v = gamecmd } },
 	{ MODKEY,                       XK_r,      spawn,          {.v = statcmd } },
 	{ MODKEY,                       XK_c,      spawn,          {.v = brcmd } },
+	{ MODKEY,                       XK_e,      spawn,          {.v = emacscmd } },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
