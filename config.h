@@ -92,11 +92,13 @@ static const char *statcmd[]  = { "alacritty", "-t", "stat", "-e", "radian", "-q
 static const char *brcmd[]  = { "br-keys", NULL };
 static const char *offcmd[]  = { "shutdown", "now" };
 static const char *emacscmd[] = { "launch-emacs", NULL };
+static const char *printcmd[] = { "print-screen", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ NULL,                         XK_Menu,   spawn,          {.v = dmenucmd } },
+	{ NULL,                         XK_Print,  spawn,          {.v = printcmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = term2cmd } },
 	{ MODKEY,                       XK_b,      spawn,          {.v = browsercmd } },
