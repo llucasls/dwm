@@ -29,4 +29,4 @@ index 81c493e..7da5c59 100644
  
  # compiler and linker
 -CC = cc
-+CC = cc -Wl,-R/usr/X11R7/lib
++CC = cc -Wl,-R${X11LIB}
