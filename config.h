@@ -94,6 +94,8 @@ static const char *offcmd[]  = { "shutdown", "now" };
 static const char *emacscmd[] = { "launch-emacs", NULL };
 static const char *printcmd[] = { "print-screen", NULL };
 static const char *printselcmd[] = { "print-screen", "-s" };
+static const char *volupcmd[] = { "volume", "increase", "2" };
+static const char *voldowncmd[] = { "volume", "decrease", "2" };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -137,6 +139,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Left,   tagtoprev,      {0} },
 	{ MODKEY|AltMask,               XK_Left,   rotatetags,     {.i = -1 } },
 	{ MODKEY|AltMask,               XK_Right,  rotatetags,     {.i = +1 } },
+	{ MODKEY,                       XK_Up,     spawn,          {.v = volupcmd } },
+	{ MODKEY,                       XK_Down,   spawn,          {.v = voldowncmd } },
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -5 } },
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +5 } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
