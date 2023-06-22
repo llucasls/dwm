@@ -88,14 +88,14 @@ static const char *termcmd[]  = { "alacritty", NULL };
 static const char *term2cmd[]  = { "kitty", NULL };
 static const char *browsercmd[]  = { "brave", NULL };
 static const char *gamecmd[]  = { "steam", NULL };
-static const char *statcmd[]  = { "alacritty", "-t", "stat", "-e", "radian", "-q" };
+static const char *statcmd[]  = { "alacritty", "-t", "stat", "-e", "radian", "-q", NULL };
 static const char *brcmd[]  = { "br-keys", NULL };
-static const char *offcmd[]  = { "shutdown", "now" };
-static const char *emacscmd[] = { "launch-emacs", NULL };
+static const char *offcmd[]  = { "doas", "-n", "halt", "-n", NULL };
+static const char *emacscmd[] = { "emacsclient", "--create-frame", NULL };
 static const char *printcmd[] = { "print-screen", NULL };
-static const char *printselcmd[] = { "print-screen", "-s" };
-static const char *volupcmd[] = { "volume", "increase", "2" };
-static const char *voldowncmd[] = { "volume", "decrease", "2" };
+static const char *printselcmd[] = { "print-screen", "-s", NULL };
+static const char *volupcmd[] = { "volume", "increase", "2", NULL };
+static const char *voldowncmd[] = { "volume", "decrease", "2", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
