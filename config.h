@@ -86,7 +86,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
   col_dmenu_bg, "-nf", col_dmenu_fg, "-sb", sel_dmenu_bg, "-sf", sel_dmenu_fg, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *term2cmd[]  = { "kitty", NULL };
-static const char *browsercmd[]  = { "firefox", NULL };
+static const char *browsercmd[]  = { "x-www-browser", NULL };
 static const char *gamecmd[]  = { "steam", NULL };
 static const char *statcmd[]  = { "alacritty", "-t", "stat", "-e", "radian", "-q", NULL };
 static const char *brcmd[]  = { "br-keys", NULL };
