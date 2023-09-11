@@ -1,13 +1,4 @@
-# dwm - dynamic window manager
-# See LICENSE file for copyright and license details.
-
-SYSTEM    != uname -s | sed -E "s/(\S+)/\L\1/"
-CONFIG.MK != find . -name config_${SYSTEM}.mk
-.ifndef CONFIG.MK
-    .error There is no config file defined for the current kernel
-.endif
-
-include ${CONFIG.MK}
+include config_linux.mk
 
 SRC = drw.c dwm.c util.c
 OBJ = ${SRC:.c=.o}
@@ -23,7 +14,7 @@ options:
 .c.o:
 	${CC} -c ${CFLAGS} $<
 
-${OBJ}: config.h ${CONFIG.MK}
+${OBJ}: config.h config_linux.mk
 
 config.h:
 	cp config.def.h $@
