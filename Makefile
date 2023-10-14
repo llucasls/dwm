@@ -2,12 +2,12 @@
 # See LICENSE file for copyright and license details.
 
 SYSTEM    != uname -s | sed -E "s/(\S+)/\L\1/"
-CONFIG.MK != find . -name config_${SYSTEM}.mk
-.ifndef CONFIG.MK
+CONFIG_MK != find . -name config_${SYSTEM}.mk
+.ifndef CONFIG_MK
     .error There is no config file defined for the current kernel
 .endif
 
-include ${CONFIG.MK}
+include ${CONFIG_MK}
 
 SRC = drw.c dwm.c util.c
 OBJ = ${SRC:.c=.o}
@@ -23,7 +23,7 @@ options:
 .c.o:
 	${CC} -c ${CFLAGS} $<
 
-${OBJ}: config.h ${CONFIG.MK}
+${OBJ}: config.h ${CONFIG_MK}
 
 config.h:
 	cp config.def.h $@
