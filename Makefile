@@ -1,7 +1,8 @@
 # dwm - dynamic window manager
 # See LICENSE file for copyright and license details.
 
-SYSTEM    != uname -s | sed -E "s/(\S+)/\L\1/"
+SYSTEM    != uname -s | tr '[:upper:]' '[:lower:]'
+#SYSTEM    != uname -s | sed -E "s/(\S+)/\L\1/"
 CONFIG_MK != find . -name config_${SYSTEM}.mk
 .ifndef CONFIG_MK
     .error There is no config file defined for the current kernel
