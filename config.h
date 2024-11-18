@@ -1,5 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
+#define VOL_UNIT "5"
+
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const int gappx     = 5;                 /* gaps between windows */
@@ -95,8 +97,8 @@ static const char *offcmd[]  = { "shutdown", "now", NULL };
 static const char *emacscmd[] = { "emacsclient", "--create-frame", NULL };
 static const char *printcmd[] = { "print-screen", NULL };
 static const char *printselcmd[] = { "print-screen", "-s", NULL };
-static const char *volupcmd[] = { "volume", "increase", "5", NULL };
-static const char *voldowncmd[] = { "volume", "decrease", "5", NULL };
+static const char *volupcmd[] = { "volume", "increase", VOL_UNIT, NULL };
+static const char *voldowncmd[] = { "volume", "decrease", VOL_UNIT, NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
