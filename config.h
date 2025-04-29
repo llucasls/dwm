@@ -14,8 +14,8 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
-static const char *fonts[]          = { "Firacode:style=Retina:size=11" };
-static const char dmenufont[]       = "Firacode:style=Retina:size=11";
+static const char *fonts[]          = { "LiberationMono:style=Regular:size=11" };
+static const char dmenufont[]       = "LiberationMono:style=Regular:size=11";
 static const char col_fg[]       = "#2d80d2";
 static const char sel_fg[]       = "#b4690f";
 static const char col_bg[]       = "#0f0f0f";
