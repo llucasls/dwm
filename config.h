@@ -1,7 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 
 #define ST "st"
-#define VOL_UNIT "5"
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
@@ -90,28 +89,12 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb",
   col_dmenu_bg, "-nf", col_dmenu_fg, "-sb", sel_dmenu_bg, "-sf", sel_dmenu_fg, NULL };
 static const char *termcmd[]  = { ST, NULL };
-static const char *browsercmd[]  = { "x-www-browser", NULL };
-static const char *gamecmd[]  = { "steam", NULL };
-static const char *brcmd[]  = { "br-keys", NULL };
-static const char *offcmd[]  = { "shutdown", "now", NULL };
-static const char *emacscmd[] = { "emacsclient", "--create-frame", NULL };
-static const char *printcmd[] = { "print-screen", NULL };
-static const char *printselcmd[] = { "print-screen", "-s", NULL };
-static const char *volupcmd[] = { "volume", "increase", VOL_UNIT, NULL };
-static const char *voldowncmd[] = { "volume", "decrease", VOL_UNIT, NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ NULL,                         XK_Menu,   spawn,          {.v = dmenucmd } },
-	{ NULL,                         XK_Print,  spawn,          {.v = printcmd } },
-	{ MODKEY,                       XK_Print,  spawn,          {.v = printselcmd } },
+	{ 0,                            XK_Menu,   spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_b,      spawn,          {.v = browsercmd } },
-	{ MODKEY,                       XK_g,      spawn,          {.v = gamecmd } },
-	{ MODKEY,                       XK_r,      spawn,          {.v = statcmd } },
-	{ MODKEY,                       XK_c,      spawn,          {.v = brcmd } },
-	{ MODKEY,                       XK_e,      spawn,          {.v = emacscmd } },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
@@ -141,8 +124,6 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Left,   tagtoprev,      {0} },
 	{ MODKEY|AltMask,               XK_Left,   rotatetags,     {.i = -1 } },
 	{ MODKEY|AltMask,               XK_Right,  rotatetags,     {.i = +1 } },
-	{ MODKEY,                       XK_Up,     spawn,          {.v = volupcmd } },
-	{ MODKEY,                       XK_Down,   spawn,          {.v = voldowncmd } },
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -5 } },
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +5 } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
@@ -156,7 +137,6 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY|AltMask,               XK_Escape, spawn,          {.v = offcmd } },
 };
 
 /* button definitions */

@@ -1,0 +1,27 @@
+# Launch set_keys with Super + c (regardless of layout)
+super + c
+    set_keys
+
+super + b
+    "${BROWSER:-x-www-browser}"
+
+super + g
+    steam
+
+super + alt + Escape
+    shutdown now
+
+super + e
+    emacsclient --create-frame
+
+Print
+    print-screen
+
+super + Print
+    print-screen -s
+
+super + Up
+    volume increase "${VOL_UNIT:-5}"
+
+super + Down
+    volume decrease "${VOL_UNIT:-5}"
